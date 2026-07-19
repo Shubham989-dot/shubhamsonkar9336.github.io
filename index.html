@@ -1,65 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shubham Sonkar | Portfolio</title>
 
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<title>Shubham Sonkar | Portfolio</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 </head>
 
 <body>
 
-<nav>
-    <h2>SS</h2>
+<header>
 
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Skills</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
+<div class="logo">
+SS
+<span>Shubham Sonkar</span>
+</div>
+
+<nav>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#projects">Projects</a></li>
+
+<li><a href="#certificate">Certificates</a></li>
+
+</ul>
 
 </nav>
-<section class="hero">
 
-<div class="hero-text">
+</header>
 
-<p class="hello">👋 Hello, I'm</p>
+<section class="hero" id="home">
 
-<h1>Shubham Sonkar</h1>
+<div class="left">
 
-<h2>Electronics Engineering Student</h2>
+<p class="hello">
+👋 Hello, I'm
+</p>
 
-<p class="about">
+<h1>
+Shubham Sonkar
+</h1>
+
+<h2>
+Electronics Engineering Student
+</h2>
+
+<div class="line"></div>
+
+<p class="desc">
+
 I am passionate about Software Development,
-Digital Design, Embedded Systems,
-Instrumentation and Full Stack Web Development.
-I enjoy building practical projects and continuously learning new technologies.
+Digital Design,
+Embedded Systems,
+Instrumentation and
+Full Stack Web Development.
+
+I enjoy building practical projects
+and continuously learning new technologies.
+
 </p>
 
 <div class="buttons">
 
-<a href="#">Download CV</a>
+<a href="resume/Shubham_Sonkar_Resume.pdf" class="btn1" download>
+<i class="fa-solid fa-download"></i>
+Download CV
+</a>
 
-<a href="#">Explore</a>
+<a href="#projects" class="btn2">
+Explore My Work
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+</div>
+
+<div class="social">
+
+<p>Connect with me</p>
+
+<a href="https://wa.me/917572074467" target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<a href="#">
+<i class="fa-brands fa-github"></i>
+</a>
+
+<a href="#">
+<i class="fa-brands fa-linkedin"></i>
+</a>
+
+<a href="#">
+<i class="fa-solid fa-envelope"></i>
+</a>
 
 </div>
 
 </div>
 
-<div class="hero-image">
+<div class="right">
 
-<img src="images/profile.png" alt="Profile">
+<img src="images/profile.png">
 
 </div>
 
 </section>
+<!-- About Section -->
 
+<section class="about" id="about">
+
+    <div class="about-title">
+        <h2>About Me</h2>
+        <div class="underline"></div>
+    </div>
+
+    <div class="about-container">
+
+        <div class="about-card">
+
+            <h3>Who Am I?</h3>
+
+            <p>
+                I am <strong>Shubham Sonkar</strong>, a B.Tech student in
+                Electronics Engineering with a strong interest in
+                Embedded Systems, Digital Design, IoT, VLSI, and Full Stack Web Development.
+                I enjoy solving real-world problems and continuously learning new technologies.
+            </p>
+
+        </div>
+
+        <div class="info-box">
+
+            <div class="info">
+                <h4>🎓 Education</h4>
+                <p>B.Tech Electronics Engineering</p>
+            </div>
+
+            <div class="info">
+                <h4>🏫 College</h4>
+                <p>IERT Prayagraj</p>
+            </div>
+
+            <div class="info">
+                <h4>💼 Internship</h4>
+                <p>IoT & Embedded Systems</p>
+            </div>
+
+            <div class="info">
+                <h4>📍 Location</h4>
+                <p>Lucknow, Uttar Pradesh</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 <script src="script.js"></script>
 
 </body>
+
 </html>
