@@ -79,25 +79,22 @@ justify-content:center;
 }
 
 .right img{
+    width:420px;
+    height:520px;
+    object-fit:cover;
+    object-position:center top;
 
-width:550px;
-height:550px;
+    border-radius:30px;
 
-border-radius:50%;
+    border:5px solid #0057ff;
 
-object-fit: cover;
+    box-shadow:0 15px 35px rgba(0,87,255,0.25);
 
-object-position:center top;
-  
-border:6px solid #0057ff;
+    transition:0.4s ease;
 }
-
 .right img:hover{
-
-transform:scale(1.05);
-
-box-shadow:0 0 70px rgba(13,110,253,.7);
-
+    transform:translateY(-8px) scale(1.02);
+    box-shadow:0 25px 50px rgba(0,87,255,0.35);
 }
 .hello{
 font-size:32px;
