@@ -85,14 +85,11 @@ height:550px;
 
 border-radius:50%;
 
-object-fit:cover;
+object-fit: cover;
 
+object-position:center top;
+  
 border:6px solid #0057ff;
-
-box-shadow:0 0 45px rgba(13,110,253,.35);
-
-transition:.4s;
-
 }
 
 .right img:hover{
