@@ -545,3 +545,14 @@ body.dark .btn2{
 .right img{
 animation:float 4s ease-in-out infinite;
 }
+.experience-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.experience-title h2 {
+    text-align: center;
+}
+.experience {
+    text-align: center;
+}
