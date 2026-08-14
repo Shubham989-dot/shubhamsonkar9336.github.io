@@ -547,7 +547,7 @@ body.dark .btn2{
 animation:float 4s ease-in-out infinite;
 }
 /* Experience Section */
-experience {
+.experience {
     padding: 80px 6%;
     background: #f5f8ff;
 }
