@@ -73,5 +73,115 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
     });
+    /* =================================
+       SOFTWARE SKILLS
+       ================================= */
+
+    const softwareSkills = [
+
+        {
+            name: "MATLAB",
+            level: "75%",
+            percentage: 75,
+            logo: "matlab.png"
+        },
+
+        {
+            name: "ADS",
+            level: "78%",
+            percentage: 78,
+            logo: "ads.png"
+        },
+
+        {
+            name: "Xilinx Vivado",
+            level: "70",
+            percentage: 70,
+            logo: "vivado.png"
+        },
+
+        {
+            name: "Proteus",
+            level: "72",
+            percentage: 72,
+            logo: "proteus.png"
+        },
+
+        {
+            name: "Altium Designer",
+            level: "78",
+            percentage: 78,
+            logo: "altium.png"
+        },
+
+        {
+            name: "MS Office",
+            level: "Word • Excel • PowerPoint",
+            percentage: 74,
+            logo: "office.png"
+        },
+
+        {
+            name: "VS Code",
+            level: "Development",
+            percentage: 71,
+            logo: "vscode.png"
+        }
+
+    ];
+
+
+    const container =
+        document.getElementById("software-skills-container");
+
+
+    if (container) {
+
+        softwareSkills.forEach(function (skill) {
+
+            const card = document.createElement("div");
+
+            card.className = "skill-card";
+
+            card.innerHTML = `
+
+                <div class="skill-icon">
+
+                    <img
+                        src="${skill.logo}"
+                        alt="${skill.name} logo"
+                    >
+
+                </div>
+
+
+                <div class="skill-info">
+
+                    <h3>${skill.name}</h3>
+
+                    <p>${skill.level}</p>
+
+                </div>
+
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-progress"
+                        style="width:${skill.percentage}%"
+                    ></div>
+
+                </div>
+
+            `;
+
+
+            container.appendChild(card);
+
+        });
+
+    }
+
+});
 
 });
