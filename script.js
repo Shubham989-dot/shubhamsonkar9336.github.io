@@ -16,3 +16,4 @@ toggle.addEventListener("click", () => {
         toggle.textContent="🌙";
     }
 });
+document.body.classList.add("dark");
