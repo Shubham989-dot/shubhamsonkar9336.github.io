@@ -1,61 +1,118 @@
-"use strict";
+document.addEventListener("DOMContentLoaded", () => {
 
-console.log("SCRIPT.JS LOADED");
+    const toggle = document.getElementById("theme-toggle");
 
-document.addEventListener("DOMContentLoaded", function () {
+    /* =========================================
+       THEME SETUP
+       DEFAULT = DARK MODE
+       ========================================= */
 
-    console.log("DOM LOADED");
-
-    const button = document.getElementById("theme-toggle");
-
-    if (!button) {
-        console.error("ERROR: theme-toggle button not found");
-        return;
-    }
-
-    function setTheme(theme) {
-
-        if (theme === "dark") {
-            document.body.classList.add("dark");
-
-            button.textContent = "☀️";
-            button.setAttribute("aria-label", "Switch to Light Mode");
-
-            localStorage.setItem("theme", "dark");
-
-            console.log("Dark Mode ON");
-
-        } else {
-
-            document.body.classList.remove("dark");
-
-            button.textContent = "🌙";
-            button.setAttribute("aria-label", "Switch to Dark Mode");
-
-            localStorage.setItem("theme", "light");
-
-            console.log("Light Mode ON");
-        }
-    }
-
-    // DEFAULT = LIGHT
     const savedTheme = localStorage.getItem("theme");
 
-    if (savedTheme === "dark") {
-        setTheme("dark");
+    if (savedTheme === "light") {
+        document.body.classList.add("light-mode");
+
+        if (toggle) {
+            toggle.checked = true;
+        }
     } else {
-        setTheme("light");
-    }
+        // Default theme = DARK
+        document.body.classList.remove("light-mode");
 
-    // MANUAL SWITCH
-    button.onclick = function () {
-
-        if (document.body.classList.contains("dark")) {
-            setTheme("light");
-        } else {
-            setTheme("dark");
+        if (toggle) {
+            toggle.checked = false;
         }
 
-    };
+        // Save dark as default
+        localStorage.setItem("theme", "dark");
+    }
+
+
+    /* =========================================
+       LIGHT / DARK MODE TOGGLE
+       ========================================= */
+
+    if (toggle) {
+
+        toggle.addEventListener("change", () => {
+
+            if (toggle.checked) {
+
+                // LIGHT MODE
+                document.body.classList.add("light-mode");
+                localStorage.setItem("theme", "light");
+
+            } else {
+
+                // DARK MODE
+                document.body.classList.remove("light-mode");
+                localStorage.setItem("theme", "dark");
+
+            }
+
+        });
+
+    }
+
+
+    /* =========================================
+       SMOOTH SCROLLING
+       ========================================= */
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+        link.addEventListener("click", function (event) {
+
+            const targetId = this.getAttribute("href");
+
+            if (targetId === "#") return;
+
+            const target = document.querySelector(targetId);
+
+            if (target) {
+                event.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
+
+        });
+
+    });
+
+
+    /* =========================================
+       MOBILE MENU
+       ========================================= */
+
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+
+    if (menuToggle && navMenu) {
+
+        menuToggle.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+        });
+
+    }
+
+
+    /* =========================================
+       CLOSE MOBILE MENU AFTER CLICK
+       ========================================= */
+
+    document.querySelectorAll(".nav-menu a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            if (navMenu) {
+                navMenu.classList.remove("active");
+            }
+
+        });
+
+    });
 
 });
