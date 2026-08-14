@@ -513,42 +513,94 @@ body::before {
    ========================= */
 
 section.skills {
-    width: 100%;
-    padding: 100px clamp(20px, 8vw, 10%);
-    background: #ffffff;
-    transition: background-color .3s ease, color .3s ease;
+    /* ==============================
+   SOFTWARE SKILLS - FIXED
+   ============================== */
+
+.section-skills {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin: 0 auto !important;
+    padding: 70px 20px !important;
+
+    box-sizing: border-box !important;
+
+    position: relative !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
+
+    float: none !important;
+    clear: both !important;
+
+    display: block !important;
+    text-align: center !important;
+
+    grid-column: 1 / -1 !important;
 }
 
+/* Heading */
 .skills-title {
-    text-align: center;
-    margin-bottom: 55px;
+    width: 100% !important;
+    margin: 0 auto 50px !important;
+    text-align: center !important;
 }
 
-.skills-title h2 {
-    font-size: clamp(36px, 4vw, 50px);
-    color: #0057ff;
-    margin-bottom: 15px;
-}
-
+/* Skills cards area */
 .skills-container {
-    width: min(1000px, 100%);
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 25px;
+    width: 100% !important;
+    max-width: 900px !important;
+
+    margin: 0 auto !important;
+    padding: 0 !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 20px !important;
+
+    justify-content: center !important;
+    align-items: stretch !important;
+
+    box-sizing: border-box !important;
 }
 
+/* Individual cards */
 .skill-card {
-    min-width: 0;
-    padding: 25px;
-    background: #f7f9fc;
-    border-radius: 18px;
-    display: grid;
-    grid-template-columns: 65px minmax(0, 1fr);
-    grid-template-rows: auto auto;
-    column-gap: 18px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, .08);
-    transition: .3s ease, background-color .3s ease, color .3s ease;
+    width: 100% !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+
+    transform: none !important;
+
+    box-sizing: border-box !important;
+}
+
+/* ==============================
+   MOBILE
+   ============================== */
+
+@media (max-width: 700px) {
+
+    .section-skills {
+        width: 100% !important;
+        padding: 50px 15px !important;
+    }
+
+    .skills-container {
+        width: 100% !important;
+        max-width: 500px !important;
+
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
 }
 
 .skill-card:hover {
