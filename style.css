@@ -603,7 +603,7 @@ animation:float 4s ease-in-out infinite;
 }
 
 
-document.body.classList.add("dark");
 .experience-box p{
     line-height:1.7;
 }
+document.body.classList.add("dark");
