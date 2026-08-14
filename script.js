@@ -1,33 +1,77 @@
 document.addEventListener("DOMContentLoaded", () => {
+
     const toggle = document.getElementById("theme-toggle");
 
-    // If button is not found, stop
-    if (!toggle) return;
-
-    // Get saved theme
-    const savedTheme = localStorage.getItem("theme");
-
-    // Default = LIGHT MODE
-    if (savedTheme === "dark") {
-        document.body.classList.add("dark");
-        toggle.textContent = "☀️";
-    } else {
-        document.body.classList.remove("dark");
-        toggle.textContent = "🌙";
+    // Stop if theme button is not found
+    if (!toggle) {
+        console.error("Theme toggle button not found!");
+        return;
     }
 
-    // Toggle Dark / Light Mode
+
+    // =================================
+    // DEFAULT THEME = DARK
+    // =================================
+
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "light") {
+
+        // LIGHT MODE
+        document.body.classList.remove("dark");
+        toggle.textContent = "🌙";
+        toggle.setAttribute("aria-label", "Switch to Dark Mode");
+
+    } else {
+
+        // DARK MODE
+        document.body.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+        toggle.textContent = "☀️";
+        toggle.setAttribute("aria-label", "Switch to Light Mode");
+
+    }
+
+
+    // =================================
+    // DARK ↔ LIGHT TOGGLE
+    // =================================
+
     toggle.addEventListener("click", () => {
+
         document.body.classList.toggle("dark");
 
+
+        // If DARK MODE is active
         if (document.body.classList.contains("dark")) {
-            // Dark Mode
+
             localStorage.setItem("theme", "dark");
+
+            // Sun means clicking will switch to light
             toggle.textContent = "☀️";
-        } else {
-            // Light Mode
-            localStorage.setItem("theme", "light");
-            toggle.textContent = "🌙";
+
+            toggle.setAttribute(
+                "aria-label",
+                "Switch to Light Mode"
+            );
+
         }
+
+        // If LIGHT MODE is active
+        else {
+
+            localStorage.setItem("theme", "light");
+
+            // Moon means clicking will switch to dark
+            toggle.textContent = "🌙";
+
+            toggle.setAttribute(
+                "aria-label",
+                "Switch to Dark Mode"
+            );
+
+        }
+
     });
+
 });
