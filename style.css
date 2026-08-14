@@ -865,3 +865,26 @@ body.dark .skill-bar {
         font-size: 38px;
     }
 }
+/* =========================
+   SOFTWARE SKILLS
+   ========================= */
+
+.skills {
+    padding: 100px 8%;
+    background: #fff;
+}
+
+.skills-title {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.skills-title h2 {
+    font-size: 50px;
+    color: #0057ff;
+    margin-bottom: 15px;
+}
+
+.skills-title .underline {
+    margin: 15px auto;
+}
