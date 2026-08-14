@@ -896,3 +896,23 @@ body.dark .right img {
         height: 36px;
     }
 }
+body.dark {
+    background: #0d1117 !important;
+    color: #ffffff !important;
+}
+
+body.dark header {
+    background: #161b22 !important;
+}
+
+body.dark .about {
+    background: #161b22 !important;
+}
+
+body.dark .experience {
+    background: #0d1117 !important;
+}
+
+body.dark section.skills {
+    background: #0d1117 !important;
+}
