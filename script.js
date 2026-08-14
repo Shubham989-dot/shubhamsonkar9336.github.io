@@ -3,57 +3,47 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggle = document.getElementById("theme-toggle");
 
     /* =========================================
-       THEME SETUP
-       DEFAULT = DARK MODE
-       ========================================= */
+   THEME SETUP
+   DEFAULT = DARK MODE
+   ========================================= */
 
-    const savedTheme = localStorage.getItem("theme");
+const savedTheme = localStorage.getItem("theme");
 
-    if (savedTheme === "light") {
-        document.body.classList.add("light-mode");
+if (savedTheme === "light") {
+    document.body.classList.remove("dark");
+    toggle.textContent = "🌙";
+} else {
+    document.body.classList.add("dark");
+    localStorage.setItem("theme", "dark");
+    toggle.textContent = "☀️";
+}
 
-        if (toggle) {
-            toggle.checked = true;
+
+/* =========================================
+   LIGHT / DARK MODE TOGGLE
+   ========================================= */
+
+if (toggle) {
+    toggle.addEventListener("click", () => {
+
+        if (document.body.classList.contains("dark")) {
+
+            // Switch to LIGHT
+            document.body.classList.remove("dark");
+            localStorage.setItem("theme", "light");
+            toggle.textContent = "🌙";
+
+        } else {
+
+            // Switch to DARK
+            document.body.classList.add("dark");
+            localStorage.setItem("theme", "dark");
+            toggle.textContent = "☀️";
+
         }
-    } else {
-        // Default theme = DARK
-        document.body.classList.remove("light-mode");
 
-        if (toggle) {
-            toggle.checked = false;
-        }
-
-        // Save dark as default
-        localStorage.setItem("theme", "dark");
-    }
-
-
-    /* =========================================
-       LIGHT / DARK MODE TOGGLE
-       ========================================= */
-
-    if (toggle) {
-
-        toggle.addEventListener("change", () => {
-
-            if (toggle.checked) {
-
-                // LIGHT MODE
-                document.body.classList.add("light-mode");
-                localStorage.setItem("theme", "light");
-
-            } else {
-
-                // DARK MODE
-                document.body.classList.remove("light-mode");
-                localStorage.setItem("theme", "dark");
-
-            }
-
-        });
-
-    }
-
+    });
+}
 
     /* =========================================
        SMOOTH SCROLLING
