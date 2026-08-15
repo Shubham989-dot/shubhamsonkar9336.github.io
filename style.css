@@ -1125,3 +1125,294 @@ body.dark .experience {
 body.dark section.skills {
     background: #0d1117 !important;
 }
+
+
+/* =====================================================
+   FINAL CARD DESIGN FIX
+   Software Skills + Expertise
+   ===================================================== */
+
+/* Software Skills section */
+section.skills {
+    width: 100%;
+    padding: 80px 8%;
+    background: #ffffff;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.skills-title {
+    width: 100%;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.skills-title h2,
+.expertise-title h2 {
+    font-size: clamp(36px, 4vw, 50px);
+    font-weight: 700;
+    margin: 0 0 15px;
+}
+
+/* Same two-column layout */
+.skills-container,
+.expertise-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* Same card shell */
+.skill-card,
+.expertise-card {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 24px;
+    box-sizing: border-box;
+    background: #f1f4f9;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+    transition: transform .3s ease, box-shadow .3s ease, background-color .3s ease;
+}
+
+/* Same hover effect */
+.skill-card:hover,
+.expertise-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .12);
+}
+
+/* Software skill layout */
+.skill-card {
+    display: grid;
+    grid-template-columns: 60px minmax(0, 1fr);
+    column-gap: 16px;
+    align-items: center;
+    text-align: left;
+}
+
+/* Expertise has no logo, so use the same visual spacing */
+.expertise-card {
+    text-align: left;
+    display: block;
+}
+
+/* Software skill logo */
+.skill-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, .10);
+}
+
+.skill-icon img {
+    width: 42px;
+    height: 42px;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.skill-info {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.skill-info h3,
+.expertise-card h3 {
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0 0 6px;
+}
+
+.skill-info p,
+.expertise-card p {
+    margin: 0;
+    font-size: 14px;
+    color: #666666;
+}
+
+/* Same progress-bar size and shape */
+.skill-bar,
+.expertise-bar {
+    width: 100%;
+    height: 8px;
+    margin-top: 20px;
+    background: #dfe6ee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Software bar spans both columns */
+.skill-bar {
+    grid-column: 1 / 3;
+}
+
+/* Triple-color progress gradients */
+.skill-progress,
+.expertise-progress {
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* Blue → Purple → Pink */
+.skill-card:nth-child(1) .skill-progress,
+.expertise-card:nth-child(1) .expertise-progress {
+    background: linear-gradient(90deg, #007bff, #7b2ff7, #ff4f81);
+}
+
+/* Teal → Blue → Purple */
+.skill-card:nth-child(2) .skill-progress,
+.expertise-card:nth-child(2) .expertise-progress {
+    background: linear-gradient(90deg, #00b894, #0984e3, #6c5ce7);
+}
+
+/* Orange → Pink → Purple */
+.skill-card:nth-child(3) .skill-progress,
+.expertise-card:nth-child(3) .expertise-progress {
+    background: linear-gradient(90deg, #ff9f43, #ff5f6d, #8e44ad);
+}
+
+/* Green → Teal → Blue */
+.skill-card:nth-child(4) .skill-progress,
+.expertise-card:nth-child(4) .expertise-progress {
+    background: linear-gradient(90deg, #20bf6b, #00b894, #0984e3);
+}
+
+/* Yellow → Orange → Pink */
+.skill-card:nth-child(5) .skill-progress,
+.expertise-card:nth-child(5) .expertise-progress {
+    background: linear-gradient(90deg, #f9ca24, #f0932b, #eb4d4b);
+}
+
+/* Purple → Pink → Orange */
+.skill-card:nth-child(6) .skill-progress,
+.expertise-card:nth-child(6) .expertise-progress {
+    background: linear-gradient(90deg, #6c5ce7, #e84393, #ff7675);
+}
+
+/* Blue → Teal → Green */
+.skill-card:nth-child(7) .skill-progress,
+.expertise-card:nth-child(7) .expertise-progress {
+    background: linear-gradient(90deg, #3867d6, #00cec9, #26de81);
+}
+
+/* Expertise section */
+.expertise {
+    width: 100%;
+    padding: 80px 8%;
+    background: #ffffff;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.expertise-title {
+    width: 100%;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.expertise-title .underline {
+    width: 90px;
+    height: 5px;
+    margin: 15px auto;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #007bff, #7b2ff7, #ff4f81);
+}
+
+/* Experience skill tags - matches the actual HTML class */
+.experience-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.experience-skills span {
+    padding: 9px 18px;
+    background: #e1f1ff;
+    color: #1268b5;
+    border-radius: 25px;
+    font-weight: 600;
+}
+
+/* =====================================================
+   DARK MODE
+   ===================================================== */
+
+body.dark section.skills,
+body.dark .expertise {
+    background: #0d1117;
+}
+
+body.dark .skill-card,
+body.dark .expertise-card {
+    background: #1c2128;
+    color: #f5f5f5;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
+}
+
+body.dark .skill-icon {
+    background: #161b22;
+}
+
+body.dark .skill-info p,
+body.dark .expertise-card p {
+    color: #c9d1d9;
+}
+
+body.dark .skill-bar,
+body.dark .expertise-bar {
+    background: #30363d;
+}
+
+body.dark .experience-skills span {
+    background: #263b55;
+    color: #9ecbff;
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    section.skills,
+    .expertise {
+        padding: 60px 20px;
+    }
+
+    .skills-container,
+    .expertise-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        max-width: 500px;
+    }
+
+    .skill-card {
+        grid-template-columns: 55px minmax(0, 1fr);
+        padding: 18px;
+    }
+
+    .skill-icon {
+        width: 55px;
+        height: 55px;
+    }
+
+    .skill-icon img {
+        width: 38px;
+        height: 38px;
+    }
+
+}
